@@ -6,7 +6,7 @@ import freemarker.template.TemplateException;
 import java.io.File;
 import java.io.IOException;
 
-public class MainGenrator {
+public class MainGenerator {
     public static void main(String[] args) throws TemplateException, IOException {
         String projectPath = System.getProperty("user.dir");
         String StaticinputPath = projectPath + File.separator + "Demo-Projects";
@@ -36,6 +36,6 @@ public class MainGenrator {
     public static void doGenerate(String StaticInputPath,String StaticOutputPath, String DynamicInputPath, String DynamicOutputPath, Object model) throws TemplateException, IOException {
 
         StaticGenerator.doStaticGenerate(StaticInputPath, StaticOutputPath);
-        DynamicGenrator.doDynamicGenreate(DynamicInputPath, DynamicOutputPath, model);
+        DynamicGenerator.doDynamicGenreate(DynamicInputPath, DynamicOutputPath, model);
     }
 }

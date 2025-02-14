@@ -1,10 +1,9 @@
-package com.Heyon.acm;
-
+package com.demo;
 import java.util.Scanner;
 
 /**
 *  ACM 输入模板（多数之和）
-@author ${author}
+*  @author ${author}
 */
 
 public class MainTemplate {
