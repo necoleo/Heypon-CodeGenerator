@@ -1,8 +1,8 @@
-package com.Heypon.cli.command;
+package ${basePackage}.cli.command;
 
 
 import cn.hutool.core.util.ReflectUtil;
-import com.Heypon.model.MainTemplateModel;
+import ${basePackage}.model.DataModel;
 import picocli.CommandLine;
 
 import java.lang.reflect.Field;
@@ -12,7 +12,7 @@ public class ConfigCommand implements Runnable {
     @Override
     public void run() {
         System.out.println("查看配置信息");
-        Field[] fields = ReflectUtil.getFields(MainTemplateModel.class);
+        Field[] fields = ReflectUtil.getFields(DataModel.class);
         for (Field field : fields) {
             System.out.println("字段类型" + field.getType());
             System.out.println("字段名称" + field.getName());

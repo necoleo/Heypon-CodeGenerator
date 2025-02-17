@@ -13,9 +13,9 @@
     </properties>
     <!-- 其他配置... -->
 
-    <groupId>com.Heypon</groupId>
-    <artifactId>Heypon-CodeGenerator</artifactId>
-    <version>1.0-SNAPSHOT</version>
+    <groupId>${basePackage}</groupId>
+    <artifactId>${name}</artifactId>
+    <version>${version}</version>
 
     <dependencies>
         <!-- https://doc.hutool.cn/ -->
@@ -75,7 +75,7 @@
                     </descriptorRefs>
                     <archive>
                         <manifest>
-                            <mainClass>com.Heypon.Main</mainClass> <!-- 替换为你的主类的完整类名 -->
+                            <mainClass>${basePackage}.Main</mainClass> <!-- 替换为你的主类的完整类名 -->
                         </manifest>
                     </archive>
                 </configuration>

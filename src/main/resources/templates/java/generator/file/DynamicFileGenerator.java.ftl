@@ -1,6 +1,7 @@
-package com.Heypon.generator;
+package ${basePackage}.generator.file;
 
-import com.Heypon.model.MainTemplateModel;
+import cn.hutool.core.io.FileUtil;
+import ${basePackage}.model.DataModel;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -10,18 +11,7 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
 
-public class DynamicGenerator {
-    public static void main(String[] args) throws IOException, TemplateException {
-        String projectPath = System.getProperty("user.dir");
-        String inputPath = projectPath + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "templateFtl" + File.separator;
-        String outputPath = projectPath + File.separator + "MainTemplateFtl.java";
-        MainTemplateModel mainTemplateModel = new MainTemplateModel();
-        mainTemplateModel.setAuthor("Heypon");
-        mainTemplateModel.setOutputText("Hello World");
-        mainTemplateModel.setLoop(false);
-        doDynamicGenreate(inputPath, outputPath, mainTemplateModel);
-    }
-
+public class DynamicFileGenerator {
     /**
      * 动态生成
      * 根据 model 文件夹里的数据模型配置生成可变参数的模板文件
@@ -36,8 +26,11 @@ public class DynamicGenerator {
         // new 出 Configuration 对象，参数为 FreeMarker 版本号
         Configuration configuration = new Configuration(Configuration.VERSION_2_3_32);
 
+        // template 文件的目录
+        File templateDir = new File(inputFile.getParent());
+
         // 指定模板文件所在的路径
-        configuration.setDirectoryForTemplateLoading(inputFile);
+        configuration.setDirectoryForTemplateLoading(templateDir);
 
         // 设置模板文件使用的字符集
         configuration.setDefaultEncoding("utf-8");
@@ -47,7 +40,13 @@ public class DynamicGenerator {
         configuration.setNumberFormat("0.######");
 
         // 创建数据模型
-        Template template = configuration.getTemplate("MainTemplateFtl.java.ftl");
+        String templateName = FileUtil.getName(inputFile);
+        Template template = configuration.getTemplate(templateName);
+
+        // 文件不存在则新建文件
+        if (!FileUtil.exist(outputPath)){
+            FileUtil.touch(outputPath);
+        }
 
         Writer outputFile = new FileWriter(outputPath);
 

@@ -1,16 +1,16 @@
-package com.Heypon.cli;
+package ${basePackage}.cli;
 
-import com.Heypon.cli.command.ConfigCommand;
-import com.Heypon.cli.command.GenerateCommand;
-import com.Heypon.cli.command.ListCommand;
+import ${basePackage}.cli.command.ConfigCommand;
+import ${basePackage}.cli.command.GenerateCommand;
+import ${basePackage}.cli.command.ListCommand;
 import picocli.CommandLine;
 
 /**
  *  命令执行器
  *  关联 ConfigCommand、ListCommand、GenerateCommand
  */
-@CommandLine.Command(name = "Heypon", mixinStandardHelpOptions = true)
-public class CommandExcutor implements Runnable {
+@CommandLine.Command(name = "${name}", mixinStandardHelpOptions = true)
+public class CommandExecutor implements Runnable {
 
     private final CommandLine commandLine;
     {

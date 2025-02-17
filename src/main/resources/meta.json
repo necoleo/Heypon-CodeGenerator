@@ -1,0 +1,58 @@
+{
+  "name": "Heypon-CodeGenerator",
+  "description": "模板代码生成器",
+  "basePackage": "com.Heypon",
+  "version": "1.0",
+  "author": "Heypon",
+  "createTime": "2024-11-22",
+  "fileConfig": {
+    "inputRootPath": "D:/javaProject/Heypon-CodeGenerator",
+    "outputRootPath": "D:/javaProject/Heypon-CodeGenerator/generated",
+    "type": "dir",
+    "files": [
+      {
+        "inputPath": "src/main/resources/templates/MaintemplateFtl.java.ftl",
+        "outputPath": "Demo-Projects-test/src/com/Heypon/templates/MainTemplate.java",
+        "type": "file",
+        "generateType": "dynamic"
+      },
+      {
+        "inputPath": ".gitignore",
+        "outputPath": ".gitignore",
+        "type": "file",
+        "generateType": "static"
+      },
+      {
+        "inputPath": "README.md",
+        "outputPath": "README.md",
+        "type": "file",
+        "generateType": "static"
+      }
+    ]
+  },
+  "modelConfig": {
+    "models": [
+      {
+        "fieldName": "loop",
+        "type": "boolean",
+        "description": "是否生成循环",
+        "defaultValue": false,
+        "abbr": "l"
+      },
+      {
+        "fieldName": "author",
+        "type": "String",
+        "description": "作者注释",
+        "defaultValue": "Heypon",
+        "abbr": "a"
+      },
+      {
+        "fieldName": "outputText",
+        "type": "String",
+        "description": "输出信息",
+        "defaultValue": "sum = ",
+        "abbr": "o"
+      }
+    ]
+  }
+}
