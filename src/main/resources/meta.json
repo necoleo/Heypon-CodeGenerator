@@ -1,37 +1,52 @@
 {
-  "name": "Heypon-CodeGenerator",
-  "description": "模板代码生成器",
+  "name": "Demo-Projects-Generator",
+  "description": "示例项目的代码生成器",
   "basePackage": "com.Heypon",
   "version": "1.0",
   "author": "Heypon",
   "createTime": "2024-11-22",
   "fileConfig": {
-    "inputRootPath": "D:/javaProject/Heypon-CodeGenerator",
+    "sourceRootPath": "D:/javaProject/Heypon-generator/Heypon-generator-basic",
+    "inputRootPath": ".source/Heypon-generator-basic",
     "outputRootPath": "D:/javaProject/Heypon-CodeGenerator/generated",
     "type": "dir",
     "files": [
       {
-        "inputPath": "src/main/resources/templates/MaintemplateFtl.java.ftl",
-        "outputPath": "Demo-Projects-test/src/com/Heypon/templates/MainTemplate.java",
+        "groupKey": "git",
+        "groupName": "开源",
+        "type": "group",
+        "condition": "needGit",
+        "files": [
+          {
+            "inputPath": ".gitignore",
+            "outputPath": ".gitignore",
+            "type": "file",
+            "generateType": "static"
+          },
+          {
+            "inputPath": "README.md",
+            "outputPath": "README.md",
+            "type": "file",
+            "generateType": "static"
+          }
+        ]
+      },
+      {
+        "inputPath": "src/main/resources/templates/Maintemplate.java.ftl",
+        "outputPath": "src/main/resources/templates/Maintemplate.java",
         "type": "file",
         "generateType": "dynamic"
-      },
-      {
-        "inputPath": ".gitignore",
-        "outputPath": ".gitignore",
-        "type": "file",
-        "generateType": "static"
-      },
-      {
-        "inputPath": "README.md",
-        "outputPath": "README.md",
-        "type": "file",
-        "generateType": "static"
       }
     ]
   },
   "modelConfig": {
     "models": [
+      {
+        "fieldName": "needGit",
+        "type": "boolean",
+        "description": "是否生成 .gitignore 文件",
+        "defaultValue": true
+      },
       {
         "fieldName": "loop",
         "type": "boolean",
@@ -40,18 +55,27 @@
         "abbr": "l"
       },
       {
-        "fieldName": "author",
-        "type": "String",
-        "description": "作者注释",
-        "defaultValue": "Heypon",
-        "abbr": "a"
-      },
-      {
-        "fieldName": "outputText",
-        "type": "String",
-        "description": "输出信息",
-        "defaultValue": "sum = ",
-        "abbr": "o"
+        "groupKey": "mainTemplate",
+        "groupName": "核心模板",
+        "type": "MainTemplate",
+        "description": "用于生成核心模板文件",
+        "condition": "loop",
+        "models": [
+          {
+            "fieldName": "author",
+            "type": "String",
+            "description": "作者注释",
+            "defaultValue": "Heypon",
+            "abbr": "a"
+          },
+          {
+            "fieldName": "outputText",
+            "type": "String",
+            "description": "输出信息",
+            "defaultValue": "sum = ",
+            "abbr": "o"
+          }
+        ]
       }
     ]
   }

@@ -7,17 +7,6 @@ import java.io.File;
 import java.io.IOException;
 
 public class FileGenerator {
-    public static void main(String[] args) throws TemplateException, IOException {
-
-
-        DataModel dataModel = new DataModel();
-        dataModel.setAuthor("Heypon");
-        dataModel.setOutputText("I am a hero");
-        dataModel.setLoop(true);
-
-        doGenerate(dataModel);
-    }
-
     /**
      * 主代码生成器
      * 分别调用静态生成器和动态生成器

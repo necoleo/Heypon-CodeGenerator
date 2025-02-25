@@ -14,17 +14,32 @@ public class DataModel {
     */
 
     /**
-     * 作者名称
+     * 是否生成 .gitignore 文件
      */
-    private String author = "Heypon";
-
-    /**
-     * 输出信息
-     */
-    private String outputText = "sum";
+    private boolean needGit = true;
 
     /**
      * 是否循环
      */
-    private boolean loop;
+    private boolean loop = false;
+
+    /**
+     * 核心模板
+     */
+    public MainTemplate mainTemplate = new MainTemplate();
+
+    @Data
+    public class MainTemplate {
+        /**
+         * 作者名称
+         */
+        private String author = "Heypon";
+
+        /**
+         * 输出信息
+         */
+        private String outputText = "sum";
+
+    }
+
 }
