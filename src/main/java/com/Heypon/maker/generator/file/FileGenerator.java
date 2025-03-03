@@ -1,6 +1,5 @@
 package com.Heypon.maker.generator.file;
 
-import com.Heypon.maker.model.DataModel;
 import freemarker.template.TemplateException;
 
 import java.io.File;

@@ -1,7 +1,6 @@
 package com.Heypon.maker.generator.file;
 
 import cn.hutool.core.io.FileUtil;
-import com.Heypon.maker.model.DataModel;
 import freemarker.template.Configuration;
 import freemarker.template.Template;
 import freemarker.template.TemplateException;
@@ -13,16 +12,6 @@ import java.io.Writer;
 
 
 public class DynamicFileGenerator {
-    public static void main(String[] args) throws IOException, TemplateException {
-        String projectPath = System.getProperty("user.dir");
-        String inputPath = projectPath + File.separator + "src" + File.separator + "main" + File.separator + "resources" + File.separator + "templates" + File.separator;
-        String outputPath = projectPath + File.separator + "MainTemplateFtl.java";
-        DataModel dataModel = new DataModel();
-//        dataModel.setAuthor("Heypon");
-//        dataModel.setOutputText("Hello World");
-        dataModel.setLoop(false);
-        doDynamicGenreate(inputPath, outputPath, dataModel);
-    }
 
     /**
      * 动态生成

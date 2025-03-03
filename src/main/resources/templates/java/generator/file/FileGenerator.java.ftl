@@ -32,9 +32,6 @@ public class FileGenerator {
         String inputRootPath = "${fileConfig.inputRootPath}";
         String outputRootPath = "${fileConfig.outputRootPath}";
 
-        String outputText = model.mainTemplate.outputText;
-        String author = model.mainTemplate.author;
-
         String inputPath;
         String outputPath;
 

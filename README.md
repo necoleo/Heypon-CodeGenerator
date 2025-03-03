@@ -75,8 +75,8 @@ Heypon 代码生成器是一个能依据配置文件动态生成 Java 项目代�
         "type": "file",
         "files": [
             {
-                "inputPath": "templates/java/model/DataModel.java.ftl",
-                "outputPath": "src/main/java/com/Heypon/maker/model/DataModel.java",
+                "inputPath": "",
+                "outputPath": "",
                 "type": "java",
                 "generateType": "dynamic"
             }

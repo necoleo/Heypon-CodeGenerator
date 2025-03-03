@@ -18,13 +18,13 @@ ${indent}private ${modelInfo.type} ${modelInfo.fieldName}<#if modelInfo.defaultV
 <#-- 生成命令调用 -->
 <#macro generateCommand indent modelInfo>
 ${indent}System.out.println("输入${modelInfo.groupName}配置：");
-${indent}CommandLine commandLine = new CommandLine(${modelInfo.type}Command.class);
-${indent}commandLine.execute(${modelInfo.allArgsStr});
+${indent}CommandLine ${modelInfo.groupKey}commandLine = new CommandLine(${modelInfo.type}Command.class);
+${indent}${modelInfo.groupKey}commandLine.execute(${modelInfo.allArgsStr});
 </#macro>
 
 @CommandLine.Command(name = "generate", description = "生成代码", mixinStandardHelpOptions = true)
 @Data
-public class GenerateCommand implements Callable {
+public class GenerateCommand implements Callable<Integer> {
 <#list modelConfig.models as modelInfo>
     <#-- 有分组 -->
     <#if modelInfo.groupKey??>
@@ -36,7 +36,7 @@ public class GenerateCommand implements Callable {
     <#-- 根据分组生成命令类 -->
     @CommandLine.Command(name = "${modelInfo.groupKey}")
     @Data
-    public static class ${modelInfo.type}Command implement Runnable {
+    public static class ${modelInfo.type}Command implements Runnable {
     <#list modelInfo.models as subModelInfo>
         <@generateOption indent = "        "modelInfo=subModelInfo />
     </#list>
@@ -75,7 +75,7 @@ public class GenerateCommand implements Callable {
         dataModel.${modelInfo.groupKey} = ${modelInfo.groupKey};
         </#if>
         </#list>
-        MainGenerator.doGenerate(dataModel);
+        FileGenerator.doGenerate(dataModel);
         return 0;
     }
 }

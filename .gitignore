@@ -1,7 +1,11 @@
 ### Java template
 # Compiled class file
 *.class
+
+# dir
 generated
+.temp
+
 # Log file
 *.log
 
