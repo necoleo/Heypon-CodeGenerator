@@ -1,8 +1,8 @@
-package com.Heypon.backend.exception;
+package com.Heypon.web.exception;
 
-import com.Heypon.backend.common.BaseResponse;
-import com.Heypon.backend.common.ErrorCode;
-import com.Heypon.backend.common.ResultUtils;
+import com.Heypon.web.common.BaseResponse;
+import com.Heypon.web.common.ErrorCode;
+import com.Heypon.web.common.ResultUtils;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;

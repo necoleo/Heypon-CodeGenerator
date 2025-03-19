@@ -1,4 +1,4 @@
-package com.Heypon.backend.config;
+package com.Heypon.web.config;
 
 import com.qcloud.cos.COSClient;
 import com.qcloud.cos.ClientConfig;

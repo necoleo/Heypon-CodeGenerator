@@ -1,6 +1,6 @@
-package com.Heypon.backend.common;
+package com.Heypon.web.common;
 
-import com.Heypon.backend.constant.CommonConstant;
+import com.Heypon.web.constant.CommonConstant;
 import lombok.Data;
 
 /**

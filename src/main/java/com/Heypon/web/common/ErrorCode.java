@@ -1,4 +1,4 @@
-package com.Heypon.backend.common;
+package com.Heypon.web.common;
 
 /**
  * 自定义错误码

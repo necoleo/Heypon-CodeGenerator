@@ -1,17 +1,17 @@
-package com.Heypon.backend.service.impl;
+package com.Heypon.web.service.impl;
 
 import cn.hutool.core.collection.CollUtil;
-import com.Heypon.backend.common.ErrorCode;
-import com.Heypon.backend.constant.CommonConstant;
-import com.Heypon.backend.exception.BusinessException;
-import com.Heypon.backend.mapper.UserMapper;
-import com.Heypon.backend.model.dto.user.UserQueryRequest;
-import com.Heypon.backend.model.entity.User;
-import com.Heypon.backend.model.enums.UserRoleEnum;
-import com.Heypon.backend.model.vo.LoginUserVO;
-import com.Heypon.backend.model.vo.UserVO;
-import com.Heypon.backend.service.UserService;
-import com.Heypon.backend.utils.SqlUtils;
+import com.Heypon.web.common.ErrorCode;
+import com.Heypon.web.constant.CommonConstant;
+import com.Heypon.web.exception.BusinessException;
+import com.Heypon.web.mapper.UserMapper;
+import com.Heypon.web.model.dto.user.UserQueryRequest;
+import com.Heypon.web.model.entity.User;
+import com.Heypon.web.model.enums.UserRoleEnum;
+import com.Heypon.web.model.vo.LoginUserVO;
+import com.Heypon.web.model.vo.UserVO;
+import com.Heypon.web.service.UserService;
+import com.Heypon.web.utils.SqlUtils;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import lombok.extern.slf4j.Slf4j;
@@ -25,7 +25,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-import static com.Heypon.backend.constant.UserConstant.USER_LOGIN_STATE;
+import static com.Heypon.web.constant.UserConstant.USER_LOGIN_STATE;
 
 /**
  * 用户服务实现

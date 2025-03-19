@@ -1,4 +1,4 @@
-package com.Heypon.backend.model.enums;
+package com.Heypon.web.model.enums;
 
 import org.apache.commons.lang3.ObjectUtils;
 

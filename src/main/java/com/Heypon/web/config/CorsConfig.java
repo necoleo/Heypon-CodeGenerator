@@ -1,4 +1,4 @@
-package com.Heypon.backend.config;
+package com.Heypon.web.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;

@@ -1,8 +1,8 @@
-package com.Heypon.backend.model.vo;
+package com.Heypon.web.model.vo;
 
 import cn.hutool.json.JSONUtil;
-import com.Heypon.backend.meta.Meta;
-import com.Heypon.backend.model.entity.Generator;
+import com.Heypon.maker.meta.Meta;
+import com.Heypon.web.model.entity.Generator;
 import lombok.Data;
 import org.springframework.beans.BeanUtils;
 
@@ -20,16 +20,6 @@ public class GeneratorVO implements Serializable {
      * id
      */
     private Long id;
-
-    /**
-     * 创建人信息
-     */
-    private UserVO user;
-
-    /**
-     * 是否已收藏
-     */
-    private Boolean hasFavour;
 
     /**
      * 名称
@@ -87,9 +77,25 @@ public class GeneratorVO implements Serializable {
     private Integer status;
 
     /**
+     * 创建用户 id
+     */
+    private Long userId;
+
+    /**
      * 更新时间
      */
     private Date updateTime;
+
+    /**
+     * 创建时间
+     */
+    private Date createTime;
+
+    /**
+     * 创建人信息
+     */
+    private UserVO user;
+
 
     private static final long SerialVersionUID = 1L;
 
@@ -105,7 +111,6 @@ public class GeneratorVO implements Serializable {
         }
         Generator generator = new Generator();
         BeanUtils.copyProperties(generatorVO, generator);
-        generatorVO.getTags();
         List<String> tagList = generatorVO.getTags();
         generator.setTags(JSONUtil.toJsonStr(tagList));
         Meta.FileConfig fileConfig = generatorVO.getFileConfig();

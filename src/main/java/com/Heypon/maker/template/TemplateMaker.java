@@ -282,6 +282,11 @@ public class TemplateMaker {
     }
 
 
+    /**
+     * 获取模型信息列表
+     * @param templateMakerModelConfig
+     * @return
+     */
     private static List<Meta.ModelConfig.ModelInfo> getModelInfoList(TemplateMakerModelConfig templateMakerModelConfig){
         // 本次新增的模型配置列表
         List<Meta.ModelConfig.ModelInfo> newModelInfoList = new ArrayList<>();

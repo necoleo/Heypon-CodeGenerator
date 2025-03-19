@@ -1,4 +1,4 @@
-package com.Heypon.backend.utils;
+package com.Heypon.web.utils;
 
 import org.jetbrains.annotations.NotNull;
 import org.springframework.beans.BeansException;

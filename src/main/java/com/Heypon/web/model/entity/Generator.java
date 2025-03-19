@@ -1,8 +1,9 @@
-package com.Heypon.backend.model.entity;
+package com.Heypon.web.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -12,9 +13,9 @@ import java.util.Date;
  */
 @TableName(value = "generator")
 @Data
-public class Generator {
+public class Generator implements Serializable {
     /**
-     *
+     * id
      */
     @TableId(type = IdType.AUTO)
     private Long id;

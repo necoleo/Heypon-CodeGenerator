@@ -20,6 +20,11 @@ public enum FileFilterRangeEnum {
         this.value = value;
     }
 
+    /**
+     * 根据 value 获取枚举
+     * @param value
+     * @return
+     */
     public static FileFilterRangeEnum getEnumByValue(String value) {
         if (ObjectUtil.isEmpty(value)){
             return null;

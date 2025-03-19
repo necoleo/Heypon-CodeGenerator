@@ -1,6 +1,6 @@
-package com.Heypon.backend.exception;
+package com.Heypon.web.exception;
 
-import com.Heypon.backend.common.ErrorCode;
+import com.Heypon.web.common.ErrorCode;
 
 /**
  * 自定义异常类

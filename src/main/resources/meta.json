@@ -1,14 +1,14 @@
 {
-  "name": "Demo-Projects-Generator",
-  "description": "示例项目的代码生成器",
+  "name": "Demo-template-pro-generator",
+  "description": "ACM 示例模板生成器",
   "basePackage": "com.Heypon",
   "version": "1.0",
   "author": "Heypon",
   "createTime": "2024-11-22",
   "fileConfig": {
-    "sourceRootPath": "D:/javaProject/Heypon-generator/Heypon-generator-basic",
-    "inputRootPath": ".source/Heypon-generator-basic",
-    "outputRootPath": "D:/javaProject/Heypon-CodeGenerator/generated",
+    "inputRootPath": ".source/acm-template",
+    "outputRootPath": "generated",
+    "sourceRootPath": "D:/javaProject/acm-template",
     "type": "dir",
     "files": [
       {
@@ -32,8 +32,8 @@
         ]
       },
       {
-        "inputPath": "src/main/resources/templates/Maintemplate.java.ftl",
-        "outputPath": "src/main/resources/templates/Maintemplate.java",
+        "inputPath": "src/com/Heypon/acm/MainTemplate.java.ftl",
+        "outputPath": "src/com/Heypon/acm/MainTemplate.java",
         "type": "file",
         "generateType": "dynamic"
       }

@@ -1,4 +1,4 @@
-package com.Heypon.backend.common;
+package com.Heypon.web.common;
 
 import lombok.Data;
 

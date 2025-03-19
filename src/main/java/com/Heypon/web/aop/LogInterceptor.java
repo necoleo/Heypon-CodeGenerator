@@ -1,4 +1,4 @@
-package com.Heypon.backend.aop;
+package com.Heypon.web.aop;
 
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -25,7 +25,7 @@ public class LogInterceptor {
     /**
      * 执行拦截
      */
-    @Around("execution(* com.Heypon.backend.controller.*.*(..))")
+    @Around("execution(* com.Heypon.web.controller.*.*(..))")
     public Object doInterceptor(ProceedingJoinPoint point) throws Throwable {
         // 计时
         StopWatch stopWatch = new StopWatch();

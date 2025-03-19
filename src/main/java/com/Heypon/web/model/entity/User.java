@@ -1,4 +1,4 @@
-package com.Heypon.backend.model.entity;
+package com.Heypon.web.model.entity;
 
 import com.baomidou.mybatisplus.annotation.*;
 import lombok.Data;

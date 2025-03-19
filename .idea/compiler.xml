@@ -9,5 +9,14 @@
         <module name="Heypon-CodeGenerator" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="Heypon-generator-web-backend" target="1.8" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="Heypon-CodeGenerator" options="-parameters" />
+      <module name="Heypon-generator-web-backend" options="-parameters" />
+    </option>
   </component>
 </project>

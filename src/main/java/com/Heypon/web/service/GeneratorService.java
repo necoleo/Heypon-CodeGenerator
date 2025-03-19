@@ -1,8 +1,8 @@
-package com.Heypon.backend.service;
+package com.Heypon.web.service;
 
-import com.Heypon.backend.model.dto.generator.GeneratorQueryRequest;
-import com.Heypon.backend.model.entity.Generator;
-import com.Heypon.backend.model.vo.GeneratorVO;
+import com.Heypon.web.model.dto.generator.GeneratorQueryRequest;
+import com.Heypon.web.model.entity.Generator;
+import com.Heypon.web.model.vo.GeneratorVO;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;

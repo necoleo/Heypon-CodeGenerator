@@ -1,6 +1,6 @@
-package com.Heypon.backend.model.dto.generator;
+package com.Heypon.web.model.dto.generator;
 
-import com.Heypon.backend.common.PageRequest;
+import com.Heypon.web.common.PageRequest;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 

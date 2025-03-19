@@ -1,4 +1,4 @@
-package com.Heypon.backend.model.dto.user;
+package com.Heypon.web.model.dto.user;
 
 import lombok.Data;
 

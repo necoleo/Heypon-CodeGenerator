@@ -1,4 +1,4 @@
-package com.Heypon.backend.model.vo;
+package com.Heypon.web.model.vo;
 
 import lombok.Data;
 

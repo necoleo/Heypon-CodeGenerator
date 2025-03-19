@@ -1,18 +1,18 @@
-package com.Heypon.backend.controller;
+package com.Heypon.web.controller;
 
-import com.Heypon.backend.annotation.AuthCheck;
-import com.Heypon.backend.common.BaseResponse;
-import com.Heypon.backend.common.DeleteRequest;
-import com.Heypon.backend.common.ErrorCode;
-import com.Heypon.backend.common.ResultUtils;
-import com.Heypon.backend.constant.UserConstant;
-import com.Heypon.backend.exception.BusinessException;
-import com.Heypon.backend.exception.ThrowUtils;
-import com.Heypon.backend.model.dto.user.*;
-import com.Heypon.backend.model.entity.User;
-import com.Heypon.backend.model.vo.LoginUserVO;
-import com.Heypon.backend.model.vo.UserVO;
-import com.Heypon.backend.service.UserService;
+import com.Heypon.web.annotation.AuthCheck;
+import com.Heypon.web.common.BaseResponse;
+import com.Heypon.web.common.DeleteRequest;
+import com.Heypon.web.common.ErrorCode;
+import com.Heypon.web.common.ResultUtils;
+import com.Heypon.web.constant.UserConstant;
+import com.Heypon.web.exception.BusinessException;
+import com.Heypon.web.exception.ThrowUtils;
+import com.Heypon.web.model.dto.user.*;
+import com.Heypon.web.model.entity.User;
+import com.Heypon.web.model.vo.LoginUserVO;
+import com.Heypon.web.model.vo.UserVO;
+import com.Heypon.web.service.UserService;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.lang3.StringUtils;
@@ -24,7 +24,7 @@ import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
-import static com.Heypon.backend.service.impl.UserServiceImpl.SALT;
+import static com.Heypon.web.service.impl.UserServiceImpl.SALT;
 
 /**
  * 用户接口

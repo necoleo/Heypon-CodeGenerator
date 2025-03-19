@@ -1,7 +1,10 @@
-package com.Heypon.backend.mapper;
+package com.Heypon.web.mapper;
 
-import com.Heypon.backend.model.entity.Generator;
+import com.Heypon.web.model.entity.Generator;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import org.apache.ibatis.annotations.Select;
+
+import java.util.List;
 
 /**
  * @author 92700
@@ -10,7 +13,6 @@ import com.baomidou.mybatisplus.core.mapper.BaseMapper;
  * @Entity generator.domain.Generator
  */
 public interface GeneratorMapper extends BaseMapper<Generator> {
-
 }
 
 

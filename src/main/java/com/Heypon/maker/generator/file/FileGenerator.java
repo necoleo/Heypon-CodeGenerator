@@ -22,6 +22,6 @@ public class FileGenerator {
         String DynamicOutputPath =new File(StaticOutputPath, File.separator + "Demo-Projects" + File.separator + "src" + File.separator + "java" + File.separator + "com" + File.separator + "demo" + File.separator + "MainTemplate.java").getAbsolutePath();
 
         StaticFileGenerator.doStaticGenerate(StaticInputPath, StaticOutputPath);
-        DynamicFileGenerator.doDynamicGenreate(DynamicInputPath, DynamicOutputPath, model);
+        DynamicFileGenerator.doGenerateByPath(DynamicInputPath, DynamicOutputPath, model);
     }
 }

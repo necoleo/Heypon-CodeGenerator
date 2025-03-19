@@ -1,11 +1,11 @@
-package com.Heypon.backend.aop;
+package com.Heypon.web.aop;
 
-import com.Heypon.backend.annotation.AuthCheck;
-import com.Heypon.backend.common.ErrorCode;
-import com.Heypon.backend.exception.BusinessException;
-import com.Heypon.backend.model.entity.User;
-import com.Heypon.backend.model.enums.UserRoleEnum;
-import com.Heypon.backend.service.UserService;
+import com.Heypon.web.annotation.AuthCheck;
+import com.Heypon.web.common.ErrorCode;
+import com.Heypon.web.exception.BusinessException;
+import com.Heypon.web.model.entity.User;
+import com.Heypon.web.model.enums.UserRoleEnum;
+import com.Heypon.web.service.UserService;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;

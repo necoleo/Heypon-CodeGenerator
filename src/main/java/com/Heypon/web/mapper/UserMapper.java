@@ -1,6 +1,6 @@
-package com.Heypon.backend.mapper;
+package com.Heypon.web.mapper;
 
-import com.Heypon.backend.model.entity.User;
+import com.Heypon.web.model.entity.User;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 
 /**

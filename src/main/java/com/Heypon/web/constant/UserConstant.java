@@ -1,4 +1,4 @@
-package com.Heypon.backend.constant;
+package com.Heypon.web.constant;
 
 /**
  * 用户常量

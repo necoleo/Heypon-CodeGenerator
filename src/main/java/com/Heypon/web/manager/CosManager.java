@@ -1,22 +1,33 @@
-package com.Heypon.backend.manager;
+package com.Heypon.web.manager;
 
-import com.Heypon.backend.config.CosClientConfig;
+import com.Heypon.web.config.CosClientConfig;
 import com.qcloud.cos.COSClient;
-import com.qcloud.cos.exception.CosClientException;
-import com.qcloud.cos.exception.CosServiceException;
 import com.qcloud.cos.model.*;
 import com.qcloud.cos.transfer.Download;
 import com.qcloud.cos.transfer.TransferManager;
 import org.springframework.stereotype.Component;
 
+import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.io.File;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
 
 /**
  * Cos 对象存储操作
  */
 @Component
 public class CosManager {
+
+    // bean 加载完成后执行
+    @PostConstruct
+    public void init() {
+        // 执行初始化逻辑
+        System.out.println("Bean initialized!");
+        // 多线程并发上传下载
+        ExecutorService threadPool = Executors.newFixedThreadPool(32);
+        transferManager = new TransferManager(cosClient, threadPool);
+    }
 
     @Resource
     private CosClientConfig cosClientConfig;

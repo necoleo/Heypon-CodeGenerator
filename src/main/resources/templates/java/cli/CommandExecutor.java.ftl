@@ -3,11 +3,12 @@ package ${basePackage}.cli;
 import ${basePackage}.cli.command.ConfigCommand;
 import ${basePackage}.cli.command.GenerateCommand;
 import ${basePackage}.cli.command.ListCommand;
+import ${basePackage}.cli.command.JsonGenerateCommand;
 import picocli.CommandLine;
 
 /**
  *  命令执行器
- *  关联 ConfigCommand、ListCommand、GenerateCommand
+ *  关联 ConfigCommand、ListCommand、GenerateCommand、JsonGenerateCommand
  */
 @CommandLine.Command(name = "${name}", mixinStandardHelpOptions = true)
 public class CommandExecutor implements Runnable {
@@ -17,7 +18,8 @@ public class CommandExecutor implements Runnable {
         commandLine = new CommandLine(this)
                 .addSubcommand(new ConfigCommand())
                 .addSubcommand(new GenerateCommand())
-                .addSubcommand(new ListCommand());
+                .addSubcommand(new ListCommand())
+                .addSubcommand(new JsonGenerateCommand());
 
     }
 

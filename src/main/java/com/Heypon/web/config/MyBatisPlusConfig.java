@@ -1,4 +1,4 @@
-package com.Heypon.backend.config;
+package com.Heypon.web.config;
 
 import com.baomidou.mybatisplus.annotation.DbType;
 import com.baomidou.mybatisplus.extension.plugins.MybatisPlusInterceptor;
@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Configuration;
  * MyBatis Plus 配置
  */
 @Configuration
-@MapperScan("com.Heypon.backend.mapper")
+@MapperScan("com.Heypon.web.mapper")
 public class MyBatisPlusConfig {
 
     /**

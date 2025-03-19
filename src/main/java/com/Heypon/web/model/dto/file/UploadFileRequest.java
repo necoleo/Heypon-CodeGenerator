@@ -1,4 +1,4 @@
-package com.Heypon.backend.model.dto.file;
+package com.Heypon.web.model.dto.file;
 
 import lombok.Data;
 

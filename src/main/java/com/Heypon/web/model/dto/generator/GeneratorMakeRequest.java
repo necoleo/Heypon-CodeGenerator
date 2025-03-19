@@ -1,11 +1,14 @@
-package com.Heypon.backend.model.dto.generator;
+package com.Heypon.web.model.dto.generator;
 
 
-import com.Heypon.backend.meta.Meta;
+import com.Heypon.maker.meta.Meta;
 import lombok.Data;
 
 import java.io.Serializable;
 
+/**
+ * 制作代码生成器请求
+ */
 @Data
 public class GeneratorMakeRequest implements Serializable {
 

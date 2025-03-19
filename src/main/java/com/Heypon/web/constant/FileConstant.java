@@ -1,4 +1,4 @@
-package com.Heypon.backend.constant;
+package com.Heypon.web.constant;
 
 /**
  * 文件常量
@@ -9,5 +9,5 @@ public interface FileConstant {
      * COS 访问地址
      * todo 需替换配置
      */
-    String COS_HOST = "https://heypon-1347960590.cos.ap-guangzhou.myqcloud.com";
+    String COS_HOST = "";
 }

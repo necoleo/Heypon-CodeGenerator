@@ -51,11 +51,11 @@ public class MetaValidator {
         }
         // sourceRootPath: 必填
         String sourceRootPath = fileConfig.getSourceRootPath();
-        if (StrUtil.isEmpty(sourceRootPath)) {
+        if (StrUtil.isBlank(sourceRootPath)) {
             throw new MetaException("sourceRootPath is null");
         }
 
-        // inputRootPath: ./source + sourceRootPath 的最后一个层级路径
+        // inputRootPath: .source + sourceRootPath 的最后一个层级路径
         String inputRootPath = fileConfig.getInputRootPath();
         if (StrUtil.isEmpty(inputRootPath)) {
             String defalutInputRootPath = ".source/" + FileUtil.getLastPathEle(Paths.get(sourceRootPath)).getFileName().toString();
@@ -96,13 +96,12 @@ public class MetaValidator {
 
             // fileInfo.outputPath: 默认与 inputPath 一致
             String outputPath = fileInfo.getOutputPath();
-            if (StrUtil.isBlank(outputPath)) {
+            if (StrUtil.isEmpty(outputPath)) {
                 fileInfo.setOutputPath(inputPath);
             }
 
             // type: 默认 inputPath 有文件后缀(如 .java) 为 file，否则为 dir
-            String fileInfoType = fileInfo.getType();
-            if (StrUtil.isBlank(fileInfoType)) {
+            if (StrUtil.isBlank(type)) {
                 // 无后缀
                 if (StrUtil.isBlank(FileUtil.getSuffix(inputPath))){
                     fileInfo.setType(FileTypeEnum.DIR.getValue());
@@ -139,7 +138,7 @@ public class MetaValidator {
             if(StrUtil.isNotEmpty(groupKey)){
                 // 生成中间参数
                 List<Meta.ModelConfig.ModelInfo> subModelInfoList = modelInfo.getModels();
-                String allArgsStr = subModelInfoList.stream()
+                String allArgsStr = modelInfo.getModels().stream()
                         .map(subModelInfo -> String.format("\"--%s\"", subModelInfo.getFieldName()))
                         .collect(Collectors.joining(", "));
                 modelInfo.setAllArgsStr(allArgsStr);
@@ -148,12 +147,17 @@ public class MetaValidator {
             // fieldName: 必填，为动态修改内容
             String fieldName = modelInfo.getFieldName();
             if (StrUtil.isBlank(fieldName)) {
-                throw new MetaException("fieldName is empty");
+                throw new MetaException("未填写 filedName");
             }
-
             String modelInfoType = modelInfo.getType();
             if (StrUtil.isEmpty(modelInfoType)) {
                 modelInfo.setType(ModelTypeEnum.STRING.getValue());
+            }
+            if (modelInfoType.equals(ModelTypeEnum.BOOLEAN.getValue())) {
+                Object defaultValue = modelInfo.getDefaultValue();
+                if (defaultValue instanceof String) {
+                    modelInfo.setDefaultValue(Boolean.parseBoolean((String) defaultValue));
+                }
             }
         }
     }

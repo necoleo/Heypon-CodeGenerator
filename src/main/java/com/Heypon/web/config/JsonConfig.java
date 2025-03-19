@@ -1,4 +1,4 @@
-package com.Heypon.backend.config;
+package com.Heypon.web.config;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;

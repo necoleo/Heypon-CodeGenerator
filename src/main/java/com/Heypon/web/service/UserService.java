@@ -1,9 +1,9 @@
-package com.Heypon.backend.service;
+package com.Heypon.web.service;
 
-import com.Heypon.backend.model.dto.user.UserQueryRequest;
-import com.Heypon.backend.model.entity.User;
-import com.Heypon.backend.model.vo.LoginUserVO;
-import com.Heypon.backend.model.vo.UserVO;
+import com.Heypon.web.model.dto.user.UserQueryRequest;
+import com.Heypon.web.model.entity.User;
+import com.Heypon.web.model.vo.LoginUserVO;
+import com.Heypon.web.model.vo.UserVO;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.IService;
 
