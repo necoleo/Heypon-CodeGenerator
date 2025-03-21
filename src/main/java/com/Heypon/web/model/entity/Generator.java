@@ -97,5 +97,5 @@ public class Generator implements Serializable {
     private Integer isDelete;
 
     @TableField(exist = false)
-    private static final long SerialVersionUID = 1L;
+    private static final long serialVersionUID = 1L;
 }

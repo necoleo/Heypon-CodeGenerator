@@ -6,6 +6,7 @@ import com.Heypon.web.model.vo.GeneratorVO;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.baomidou.mybatisplus.extension.service.IService;
+import org.springframework.stereotype.Service;
 
 import javax.servlet.http.HttpServletRequest;
 
